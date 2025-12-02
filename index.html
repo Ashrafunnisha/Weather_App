@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Forecast</h1>
+            <button id="unit-toggle" class="unit-toggle">°C / °F</button>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+            <button id="search-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="error-message" id="error-message">
+            <p>City not found. Please try again.</p>
+        </div>
+
+        <div class="weather-info" id="weather-info">
+            <div class="weather-icon">
+                <img id="icon" src="" alt="Weather Icon">
+            </div>
+            <h2 class="temp"><span id="temp">0</span><span id="unit-display">°C</span></h2>
+            <p class="description" id="description">--</p>
+            <div class="details">
+                <div class="col">
+                    <span class="label">Feels Like</span>
+                    <span class="value" id="feels-like">0°</span>
+                </div>
+                <div class="col">
+                    <span class="label">Humidity</span>
+                    <span class="value" id="humidity">0%</span>
+                </div>
+            </div>
+            <div class="details">
+                <div class="col">
+                    <span class="label">Wind Speed</span>
+                    <span class="value" id="wind">0 km/h</span>
+                </div>
+                <div class="col">
+                    <span class="label">Air Quality</span>
+                    <span class="value" id="aqi">--</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast-container" id="forecast-container" style="display: none;">
+            <h3>5-Day Forecast</h3>
+            <div class="forecast-list" id="forecast-list">
+                <!-- Forecast items will be injected here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

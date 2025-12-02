@@ -1,0 +1,223 @@
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --text-color: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --border: 1px solid rgba(255, 255, 255, 0.18);
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.container {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    transition: background 0.3s;
+}
+
+.search-box:focus-within {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.error-message {
+    display: none;
+    background: rgba(255, 82, 82, 0.8);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.weather-info {
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+.weather-icon img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.temp {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.description {
+    width: 45%;
+}
+
+.label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.3rem;
+}
+
+.value {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Forecast Styles */
+.forecast-container {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: left;
+    animation: slideUp 0.6s ease-out;
+}
+
+.forecast-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.forecast-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    /* For scrollbar spacing if needed */
+}
+
+.forecast-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 0.8rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.forecast-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.forecast-item .day {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    opacity: 0.9;
+}
+
+.forecast-item img {
+    width: 40px;
+    height: 40px;
+    margin: 0.2rem 0;
+}
+
+.forecast-item .temp {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Scrollbar for mobile */
+.forecast-list::-webkit-scrollbar {
+    height: 4px;
+}
+
+.forecast-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.forecast-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
