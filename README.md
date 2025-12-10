@@ -14,7 +14,9 @@ Your output may look similar to the screenshot below:
 - ✅ Display humidity, wind speed, and optionally other details (e.g. air quality)  
 - ✅ Show multi-day forecast / 5-day or 7-day forecast (depending on implementation)  
 - ✅ Dynamic backgrounds / icons depending on weather condition & day/night  
-- ✅ Responsive and clean UI (using HTML, CSS, JS templates)  
+- ✅ Responsive and clean UI (using HTML, CSS, JS templates)
+- <img width="956" height="450" alt="image" src="https://github.com/user-attachments/assets/c7ef1fb7-9e06-4cf1-9d86-45697a487833" />
+
 
 ## Technologies Used  
 - Python 3.x  
